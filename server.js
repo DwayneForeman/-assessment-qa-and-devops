@@ -52,6 +52,7 @@ app.get("/api/robots", (req, res) => {
   rollbar.info("Someone is getting all of the BOTS");
   try {
     res.status(200).send(botsArr);
+    //Just a heads up. My "See All Bots" button/feature does not work. This is due to Line 55 in server.js should have send(bots) oppose to send(botsArr). This is how it was created therefore, I did not update this. I tracked the issue and used as part of my bug report.
   } catch (error) {
     console.error("ERROR GETTING BOTS", error);
     res.sendStatus(400);
